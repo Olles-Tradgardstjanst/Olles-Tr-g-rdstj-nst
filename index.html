@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boka en Tid - Olles Trädgårdstjänst</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="time"], textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+        }
+        button {
+            padding: 10px;
+            background: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Boka en Tid</h1>
+        <p>Välkommen till Olles Trädgårdstjänsts bokningssida! Här kan du enkelt boka en tid för våra tjänster, inklusive gräsklippning, häckklippning och trimning. Fyll i formuläret nedan så återkommer vi till dig för att bekräfta din bokning.</p>
+
+
+        <form action="send_email.php" method="post">
+            <label for="name">Ditt namn:</label>
+            <input type="text" id="name" name="name" required>
+
+
+            <label for="phone">Telefonnummer:</label>
+            <input type="text" id="phone" name="phone" required>
+
+
+            <label for="email">E-postadress:</label>
+            <input type="email" id="email" name="email" required>
+
+
+            <label for="address">Adress:</label>
+            <input type="text" id="address" name="address" required>
+
+
+            <label for="service">Välj tjänst:</label>
+            <div class="checkbox-label">
+                <input type="checkbox" id="mowing" name="service[]" value="Gräsklippning">
+                <label for="mowing">Gräsklippning</label>
+            </div>
+            <div class="checkbox-label">
+                <input type="checkbox" id="hedge-trimming" name="service[]" value="Häckklippning">
+                <label for="hedge-trimming">Häckklippning</label>
+            </div>
+            <div class="checkbox-label">
+                <input type="checkbox" id="trimming" name="service[]" value="Trimning">
+                <label for="trimming">Trimning</label>
+            </div>
+
+
+            <label for="date">Önskat datum:</label>
+            <input type="date" id="date" name="date" required>
+
+
+            <label for="time">Önskad tid:</label>
+            <input type="time" id="time" name="time" required>
+
+
+            <label for="additional-info">Ytterligare information:</label>
+            <textarea id="additional-info" name="additional_info" rows="4"></textarea>
+
+
+            <div class="checkbox-label">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">Jag samtycker till att mina personuppgifter behandlas enligt Olles Trädgårdstjänsts integritetspolicy.</label>
+            </div>
+
+
+            <button type="submit">Boka</button>
+        </form>
+
+
+        <h2>Kontaktuppgifter</h2>
+        <p>Har du några frågor? Kontakta oss gärna!</p>
+        <p>Telefon: 070-123 45 67</p>
+        <p>E-post: <a href="mailto:info@ollestradgardstjanst.se">info@ollestradgardstjanst.se</a></p>
+
+
+        <h2>Integritetspolicy</h2>
+        <p>Läs vår <a href="#">integritetspolicy</a> för mer information om hur vi hanterar dina personuppgifter.</p>
+
+
+        <p><strong>Observera:</strong> Bokningen är inte bekräftad förrän vi har kontaktat dig och bekräftat din tid.</p>
+    </div>
+</body>
+</html>
